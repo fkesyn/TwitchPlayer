@@ -9,16 +9,11 @@
       fluid
       height="500"
     />
-
       <router-view></router-view>
-
-
-
   </div>
 </template>
 
 <script>
-
 
 export default {
   name: 'App'
