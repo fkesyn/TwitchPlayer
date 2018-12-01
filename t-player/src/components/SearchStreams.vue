@@ -4,18 +4,19 @@
       name="search-stream"
       @input="search"
     >
-    {{ this.$store.getters.previousPage }}
-    {{ this.$store.getters.currentPage }}
-    {{ this.$store.getters.nextPage }}
+    <ListStreams />
+    <!--{{ this.$store.getters.previousPage }}-->
+    <!--{{ this.$store.getters.currentPage }}-->
+    <!--{{ this.$store.getters.nextPage }}-->
   </div>
 </template>
 
 <script>
-// import StreamPlayer from './StreamPlayer.vue'
+  import ListStreams from './ListStreams.vue'
 export default {
   name: 'SearchStreams',
   components: {
-    //    StreamPlayer
+    ListStreams
   },
   data () {
     return {
@@ -37,7 +38,6 @@ export default {
                                 event.target.value
         )
         .then(response => {
-          //          console.log(response.data._links);
           this.$store.commit('saveStreams', response.data)
         })
         .catch(error => {

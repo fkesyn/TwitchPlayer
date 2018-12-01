@@ -20,7 +20,7 @@ Vue.config.productionTip = false
 
 // const baseURL = "https://api.twitch.tv/helix/";
 axios.defaults.headers.common['Client-ID'] = 'cwxoxdrhwlywwlg3brtff10lac6wl8'
-
+router.replace('/search')
 new Vue({
   el: '#app',
   store: store,

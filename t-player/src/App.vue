@@ -9,22 +9,18 @@
       fluid
       height="500"
     />
-      <SearchStreams />
+
       <router-view></router-view>
 
-    <ListStreams />
+
 
   </div>
 </template>
 
 <script>
-import SearchStreams from './components/SearchStreams.vue'
-import ListStreams from './components/ListStreams.vue'
+
+
 export default {
-  name: 'App',
-  components: {
-    SearchStreams,
-    ListStreams
-  }
+  name: 'App'
 }
 </script>
