@@ -9,12 +9,11 @@
       fluid
       height="500"
     />
-    <SearchStreams />
+      <SearchStreams />
+      <router-view></router-view>
+
     <ListStreams />
 
-    <h1 class="center-content">
-      crlll
-    </h1>
   </div>
 </template>
 

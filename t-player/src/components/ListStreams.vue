@@ -7,11 +7,10 @@
           :key="stream._id"
           class="thumbnail"
         >
-          <!--{{stream.channel.name}}-->
-          <img
-            class="stream-preview"
-            :src="stream.preview.medium"
-          >
+            <router-link :to="{ name: 'StreamPlayer', params: { channel: stream.channel.name} }"><img
+                    :src="stream.preview.medium"
+            ></router-link>
+
           <!--<b-img fluid :src="stream.preview.medium" width="100" height="100"  alt="Thumbnail" />-->
         </b-col>
       </b-row>
@@ -34,8 +33,5 @@ export default {
 <style>
     .thumbnail {
         margin-bottom: 10px;
-    }
-    .stream-preview {
-        cursor: pointer;
     }
 </style>

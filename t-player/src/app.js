@@ -7,6 +7,7 @@ import BootstrapVue from 'bootstrap-vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { store } from './store/store'
+import { router } from './router/router'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -23,5 +24,6 @@ axios.defaults.headers.common['Client-ID'] = 'cwxoxdrhwlywwlg3brtff10lac6wl8'
 new Vue({
   el: '#app',
   store: store,
+  router: router,
   render: h => h(App)
 })
