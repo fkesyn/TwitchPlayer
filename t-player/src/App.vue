@@ -1,28 +1,15 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-      <MyTeste msg="hello World!" />
-  </div>
+    <div id="app">
+        <!--<img src="./assets/twitchLogo.svg.png">-->
+        <!--<b-img :src="~/assets/twitchLogo.svg.png" width="500" height="500" fluid alt="Twitch logo" />-->
+
+        <b-img :src="require('./assets/twitchLogo.svg.png')" width="500" fluid height="500"/>
+
+
+        <h1 class="center-content">crlll</h1>
+    </div>
 </template>
 
 <script>
-import MyTeste from './components/teste.vue';
 
-export default {
-  name: 'app',
-  components: {
-    MyTeste,
-  },
-};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
