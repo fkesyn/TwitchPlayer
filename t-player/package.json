@@ -5,10 +5,11 @@
   "scripts": {
     "build-prod": "webpack --mode production --progress",
     "build": "webpack --config build/webpack.config.dev.js",
-    "dev": "webpack-dev-server --mode development --progress --hot --open",
-    "dev2": "webpack-dev-server --config build/webpack.config.dev.js",
+//    "dev": "webpack-dev-server --mode development --progress --hot --open",
+    "dev": "webpack-dev-server --config build/webpack.config.dev.js",
     "lint": "eslint --ext .js,.vue src",
-    "lint:fix": "eslint --ext .js,.vue src --fix"
+    "lint:fix": "eslint --ext .js,.vue src --fix",
+    "serve": "npm run lint:fix && npm run serve"
   },
   "dependencies": {
     "@vue/babel-preset-app": "^3.2.0",
