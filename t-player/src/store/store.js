@@ -1,29 +1,29 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
     count: 0,
-    flavor: "teste",
+    flavor: 'teste',
     streams: null,
     previousPage: null,
     currentPage: null,
     nextPage: null
   },
   mutations: {
-    increment(state) {
-      state.count++;
+    increment (state) {
+      state.count++
     },
-    change(state, flavor) {
-      state.flavor = flavor;
+    change (state, flavor) {
+      state.flavor = flavor
     },
-    saveStreams(state, data) {
-      state.previousPage = data._links.previous;
-      state.currentPage = data._links.self;
-      state.nextPage = data._links.next;
-      state.streams = data.streams;
+    saveStreams (state, data) {
+      state.previousPage = data._links.previous
+      state.currentPage = data._links.self
+      state.nextPage = data._links.next
+      state.streams = data.streams
     }
   },
   getters: {
@@ -33,4 +33,4 @@ export const store = new Vuex.Store({
     currentPage: state => state.currentPage,
     nextPage: state => state.nextPage
   }
-});
+})
