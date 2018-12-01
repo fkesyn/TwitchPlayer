@@ -18,7 +18,21 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        use: 'vue-loader'
+        use: {
+          loader: 'vue-loader',
+          options: {
+            transformToRequire: {
+              'img': 'src',
+              'image': 'xlink:href',
+              'b-img': 'src',
+              'b-img-lazy': ['src', 'blank-src'],
+              'b-card': 'img-src',
+              'b-card-img': 'img-src',
+              'b-carousel-slide': 'img-src',
+              'b-embed': 'src'
+            }
+          }
+        }
       },
       {
         test: /\.css$/,
