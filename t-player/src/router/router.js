@@ -6,10 +6,9 @@ import Search from '../components/SearchStreams.vue'
 Vue.use(VueRouter)
 
 export const router = new VueRouter({
-  mode: 'history',
-  base: __dirname,
   routes: [
     { path: '/player/:channel', name: 'StreamPlayer', component: StreamPlayer },
-    { path: '/search', name: 'Search', component: Search }
+    { path: '/search', name: 'Search', component: Search },
+    { path: '*', component: Search }
   ]
 })

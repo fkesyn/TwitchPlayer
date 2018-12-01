@@ -7,11 +7,12 @@
 
           <input
                   name="search-stream"
-                  @input="search"
+                  @input="searchByInput"
+                  v-model="query"
           >
         </b-col>
       <b-col lg="2" cols="12">
-        <DropDown id="limit-drop-down" name="Limit" :items="[5,10,15,20,25]"  />
+        <DropDown id="limit-drop-down" @input="searchByLimit" name="Limit" :items="[5,10,15,20,25]"  v-model="limit"/>
       </b-col>
       </b-row>
     </b-container>
@@ -35,22 +36,40 @@ export default {
   },
   data () {
     return {
-      info: null,
-      request: null,
-      limit: 20,
+      query: null,
+      limit: this.$localStorage.get('limit',20),
       offset: 5
     }
   },
   methods: {
-    search: function (event) {
+    searchByLimit: function () {
+      this.$localStorage.set('limit', this.limit)
+      if (this.limit === 0) {
+        this.query = null
+        this.$store.commit('clearStreams')
+      } else if (this.query.length > 0) {
+        this.search()
+      }
+    },
+    searchByInput: function (event) {
+      this.query = event.target.value
+      if (this.query.length > 0) {
+        this.search()
+      } else {
+        var self = this
+        setTimeout(function () {
+          self.$store.commit('clearStreams')
+        }, 1000)
+      }
+    },
+    search: function () {
       this.axios
         .get(
           'https://api.twitch.tv/kraken/search/streams?limit=' +
-                                this.limit +
-                                '&offset=' +
-                                this.offset +
-                                '&query=' +
-                                event.target.value
+                      this.limit +
+                      '&offset=' +
+                      this.offset +
+                      '&query=' + this.query
         )
         .then(response => {
           this.$store.commit('saveStreams', response.data)

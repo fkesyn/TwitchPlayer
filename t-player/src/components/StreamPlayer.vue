@@ -13,12 +13,11 @@
                         height="720"
                         width="1280"
                         frameborder="0"
-                        scrolling="no"
+                        scrolling="yes"
                         allowfullscreen="true">
                 </iframe>
             </b-row>
         </b-container>
-
 
     </div>
 </template>
@@ -33,6 +32,7 @@ export default {
     }
   },
   mounted: function () {
+    console.log('here')
     this.$store.commit('clearStreams')
   }
 }
