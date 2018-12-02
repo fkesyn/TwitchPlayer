@@ -1,20 +1,20 @@
 <template>
-  <div id="list-container">
-    <b-col>
-      <b-row>
-        <b-col
-          v-for="stream in this.$store.getters.streams"
-          :key="stream._id"
-          class="thumbnail"
-        >
-            <router-link :to="{ name: 'StreamPlayer', params: { channel: stream.channel.name} }"><img
-                    :src="stream.preview.medium"
-            ></router-link>
-
-          <!--<b-img fluid :src="stream.preview.medium" width="100" height="100"  alt="Thumbnail" />-->
-        </b-col>
-      </b-row>
-    </b-col>
+  <div>
+      <div id="list-container" v-if="this.$store.getters.streams.length > 0">
+          <b-col>
+              <b-row>
+                  <b-col
+                          v-for="stream in this.$store.getters.streams"
+                          :key="stream._id"
+                          class="thumbnail"
+                  >
+                      <router-link :to="{ name: 'StreamPlayer', params: { channel: stream.channel.name} }"><img
+                              :src="stream.preview.medium"
+                      ></router-link>
+                  </b-col>
+              </b-row>
+          </b-col>
+          </div>
   </div>
 </template>
 <script>
@@ -25,9 +25,6 @@ export default {
       streams: this.$store.getters.streams
     }
   }
-  //  mounted: function() {
-  //    this.streams = this.$store.getters.streams;
-  //  }
 }
 </script>
 <style>

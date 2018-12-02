@@ -1,5 +1,6 @@
 <template>
   <div>
+    <span>Kesyn</span>
     <b-container class="search-container">
       <b-row>
         <b-col lg="2" cols="12">
