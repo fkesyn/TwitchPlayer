@@ -17,16 +17,17 @@ export default {
     items: {
       type: Array,
       required: true
-    }
+    },
+    selectedOption: Object
   },
   data () {
     return {
-      selected: this.$store.getters.limit
+      selected: this.selectedOption
     }
   },
   methods: {
     updateValue: function (value) {
-        this.$store.commit('setLimit', value)
+      this.$store.commit('setLimit', value)
     }
   }
 }
