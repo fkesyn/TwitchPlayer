@@ -2,13 +2,12 @@
   <div>
     <b-container class="search-container">
       <b-row>
-        <b-col lg="2" cols="12">
+        <b-col offset-lg="1" lg="2" cols="12">
           <DropDown id="limit-drop-down" name="LIMIT" :items="limitOptions" :selectedOption = "this.$store.getters.limit"/>
         </b-col>
         <b-col lg="8" cols="12">
           <SearchBar @doSearch ="search" />
         </b-col>
-
       </b-row>
     </b-container>
   </div>

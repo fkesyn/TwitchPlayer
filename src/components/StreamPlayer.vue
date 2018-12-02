@@ -4,8 +4,8 @@
             <b-row>
                 <iframe
                         :src="channel"
-                        height="720"
-                        width="1280"
+                        height="1080"
+                        width="1920"
                         frameborder="0"
                         scrolling="yes"
                         allowfullscreen="true">

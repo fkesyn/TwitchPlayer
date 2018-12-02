@@ -1,8 +1,5 @@
 <template>
     <div class="search__container">
-        <!--<b-form-input class="search__input"-->
-        <!--type="text"-->
-        <!--placeholder="Search" @keyup.enter.native="search"></b-form-input>-->
         <input class="search__input"
                       type="text"
                       placeholder="Search" @keyup="search">
