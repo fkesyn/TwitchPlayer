@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="list-container">
     <b-col>
       <b-row>
         <b-col
@@ -31,6 +31,12 @@ export default {
 }
 </script>
 <style>
+    #list-container {
+        border-radius: 5px;
+        border: 1px solid #575756;
+        padding: 12px;
+        margin: 5px 30px 30px 40px;
+    }
     .thumbnail {
         margin-bottom: 10px;
     }

@@ -17,13 +17,14 @@
 </template>
 
 <script>
+import { twitchUrls } from '../config'
+
 export default {
   name: 'StreamPlayer',
 
   data () {
     return {
-      //      channel: 'https://api.twitch.tv/kraken/streams/' + this.$route.params.channel
-      channel: 'https://player.twitch.tv/?channel=' + this.$route.params.channel
+      channel: twitchUrls.PLAYER + '?channel=' + this.$route.params.channel
     }
   },
   mounted: function () {

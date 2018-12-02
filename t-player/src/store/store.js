@@ -7,7 +7,7 @@ Vue.use(VueLocalStorage)
 
 export const store = new Vuex.Store({
   state: {
-    limit: Vue.localStorage.get('limit', 20),
+    limit: parseInt(Vue.localStorage.get('limit', 20)),
     streams: null,
     previousPage: null,
     currentPage: null,
@@ -15,7 +15,7 @@ export const store = new Vuex.Store({
   },
   mutations: {
     setLimit (state, value) {
-      state.limit = value
+      state.limit = parseInt(value)
       Vue.localStorage.set('limit', state.limit)
     },
     saveStreams (state, data) {
