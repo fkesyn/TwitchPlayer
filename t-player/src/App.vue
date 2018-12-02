@@ -9,13 +9,17 @@
       fluid
       height="500"
     />
-      <router-view></router-view>
+    <!--<router-view></router-view>-->
+    <SearchContainer/>
   </div>
 </template>
 
 <script>
-
+import SearchContainer from './containers/SearchContainer.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    SearchContainer
+  }
 }
 </script>

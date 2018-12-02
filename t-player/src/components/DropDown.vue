@@ -21,12 +21,12 @@ export default {
   },
   data () {
     return {
-      selected: this.$localStorage.get('limit',0)
+      selected: this.$store.getters.limit
     }
   },
   methods: {
-    updateValue: function () {
-      this.$emit('input', this.selected)
+    updateValue: function (value) {
+        this.$store.commit('setLimit', value)
     }
   }
 }

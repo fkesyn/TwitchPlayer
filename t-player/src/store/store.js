@@ -1,19 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VueLocalStorage from 'vue-localstorage'
 
 Vue.use(Vuex)
+Vue.use(VueLocalStorage)
 
 export const store = new Vuex.Store({
   state: {
-    count: 0,
+    limit: Vue.localStorage.get('limit', 20),
     streams: null,
     previousPage: null,
     currentPage: null,
     nextPage: null
   },
   mutations: {
-    increment (state) {
-      state.count++
+    setLimit (state, value) {
+      state.limit = value
+      Vue.localStorage.set('limit', state.limit)
     },
     saveStreams (state, data) {
       state.previousPage = data._links.previous
@@ -29,6 +32,7 @@ export const store = new Vuex.Store({
     streams: state => state.streams,
     previousPage: state => state.previousPage,
     currentPage: state => state.currentPage,
-    nextPage: state => state.nextPage
+    nextPage: state => state.nextPage,
+    limit: state => state.limit
   }
 })

@@ -6,7 +6,6 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import VueLocalStorage from 'vue-localstorage'
 
 import { store } from './store/store'
 import { router } from './router/router'
@@ -17,12 +16,11 @@ import './assets/app.css'
 
 Vue.use(BootstrapVue)
 Vue.use(VueAxios, axios)
-Vue.use(VueLocalStorage)
 
 Vue.config.productionTip = false
 
 axios.defaults.headers.common['Client-ID'] = 'cwxoxdrhwlywwlg3brtff10lac6wl8'
-router.replace('/search')
+// router.replace('/search')
 
 new Vue({
   el: '#app',
